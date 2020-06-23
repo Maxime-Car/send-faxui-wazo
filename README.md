@@ -8,6 +8,8 @@ Firstly add a wazo user named *userfax*. Set a *$ecretP@ssword* for him (don't f
 Then go to *__Credential > identities__* then select your *userfax* user and add the following policies : wazo-auth-internal & wazo-calld-internal. (the best would be to create two policies that only allow you to retrieve a token and use the fax api)
 
 Now you are ready to send faxes !
+
+
 Final step, the gui : I used docker to set-up easyly the interface :
 
 1. Get the source code and build the image
