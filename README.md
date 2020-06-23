@@ -10,7 +10,7 @@ Then go to *__Credential > identities__* then select your *userfax* user and add
 Now you are ready to send faxes !
 
 
-Final step, the gui : I used docker to set-up easyly the interface :
+Final step, the gui : I used docker to set-up easily the interface :
 
 1. Get the source code and build the image
 ` docker built -t send-faxui-wazo /path/to/source/code `
