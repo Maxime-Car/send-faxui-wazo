@@ -38,7 +38,7 @@ if(isset($_POST["submit"])) {
     // Using PHP-Curl to get an authentication Token
     $token_request = curl_init();
 
-    curl_setopt($token_request, CURLOPT_URL, 'https://'.$wazo_ip_addr.'/api/auth/0.1/token');
+    curl_setopt($token_request, CURLOPT_URL, 'https://'.$wazo_ip_addr.':443/api/auth/0.1/token');
     curl_setopt($token_request, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($token_request, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($token_request, CURLOPT_RETURNTRANSFER, 1);
@@ -65,7 +65,7 @@ if(isset($_POST["submit"])) {
     $send_fax_request = curl_init();
     $pdf_file = new CURLFile(realpath($target_file),'application/pdf');
 
-    curl_setopt($send_fax_request, CURLOPT_URL, 'https://'.$wazo_ip_addr.':9500/1.0/users/me/faxes?extension='.$destinataire.'&caller_id=+CALLER-ID+');
+    curl_setopt($send_fax_request, CURLOPT_URL, 'https://'.$wazo_ip_addr.':443/api/calld/1.0/users/me/faxes?extension='.$destinataire.'&caller_id=+CALLER-ID+');
     curl_setopt($send_fax_request, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($send_fax_request, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($send_fax_request, CURLOPT_SSL_VERIFYHOST, false);
